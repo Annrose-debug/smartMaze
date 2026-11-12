@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Maze AI Race</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <aside class="panel hud" aria-label="Live stats">
+    <h1>Smart Maze AI Race</h1>
+    <dl>
+      <div><dt>Level</dt><dd id="level">1</dd></div>
+      <div><dt>Score</dt><dd id="score">0</dd></div>
+      <div><dt>Grid</dt><dd id="grid">9×9</dd></div>
+      <div><dt>Time</dt><dd id="time">0.0s</dd></div>
+      <div><dt>AI speed</dt><dd id="aiSpeed">–</dd></div>
+      <div><dt>AI precision</dt><dd id="aiPrec">–</dd></div>
+    </dl>
+    <div class="race">
+      <label>You <span id="pDist">0</span> steps to core</label>
+      <div class="bar"><i id="pBar" class="you"></i></div>
+      <label>AI <span id="aDist">0</span> steps to core</label>
+      <div class="bar"><i id="aBar" class="ai"></i></div>
+    </div>
+    <p class="input">Input: <span id="inputState">waiting for a key…</span></p>
+  </aside>
+
+  <div class="dpad" aria-label="On-screen controls">
+    <button data-dir="0">▲</button><button data-dir="3">◀</button><button data-dir="2">▼</button><button data-dir="1">▶</button>
+  </div>
+
+  <aside class="panel help">
+    <p><b>Move</b> Arrow keys or WASD</p>
+    <p>Reach the golden core before the purple AI does. Each level gets a bigger maze and a sharper, faster opponent.</p>
+  </aside>
+
+  <div id="overlay" class="overlay">
+    <div class="panel card">
+      <h2 id="ovTitle">Smart Maze AI Race</h2>
+      <p id="ovText">Race the AI to the golden core.</p>
+      <button id="ovBtn">Start race</button>
+      <small>Press Enter to continue</small>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
